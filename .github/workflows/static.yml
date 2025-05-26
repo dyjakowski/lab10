@@ -15,9 +15,7 @@ permissions:
   pages: write
   id-token: write
 
-uses: actions/setup-node@v4- 
-run: npm install- 
-run: npm run build -- --base=/test-repo/
+
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
@@ -44,3 +42,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - uses: actions/setup-node@v4- 
+      - run: npm install- 
+      - run: npm run build -- --base=/test-repo/
